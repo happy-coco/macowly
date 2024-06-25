@@ -1,5 +1,5 @@
 import React, { useCallback} from 'react';
-import styles from './Playlist.module.css';
+import './Playlist.module.css';
 import Tracklist from '../Tracklist/Tracklist';
 
 function Playlist(props) {
@@ -10,7 +10,7 @@ function Playlist(props) {
     [props.onNameChange]
   );
 
-  return (
+  return (  
     <div className="Playlist">
       <input onChange={handleNameChange} defaultValue={"New Playlist"} />
       <Tracklist
@@ -26,3 +26,4 @@ function Playlist(props) {
 };
 
 export default Playlist;
+

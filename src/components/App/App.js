@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import styles from './App.module.css';
+import './App.module.css';
 
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
@@ -7,11 +7,8 @@ import Playlist from '../Playlist/Playlist';
 import Spotify from "../../util/Spotify";
 
 function App() {
-  const [searchResults, setSearchResults] = useState([
-    { id: 1, name: 'Song1', artist: 'Artist1', album: 'Album1' },
-    { id: 2, name: 'Song2', artist: 'Artist2', album: 'Album2' },
-  ]);
-  const [playlistName, setPlaylistName] = useState(["New Playlist"]);
+  const [searchResults, setSearchResults] = useState([]);
+  const [playlistName, setPlaylistName] = useState("New Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const search = useCallback((term) => {
@@ -47,17 +44,20 @@ function App() {
   }, [playlistName, playlistTracks]);
 
   return (
-    <div className={styles.app}>
+    <div>
       <h1>Macowwwly</h1>
-      <SearchBar onSearch={search} />
-      <div className={styles.appBody}>
-        <SearchResults searchResults={searchResults} onAdd={addTrack} />
-        <Playlist 
-        playlistName={playlistName}
-        playlistTracks={playlistTracks}
-        onNameChange={updatePlaylistName}
-        onRemove={removeTrack}
-        onSave={savePlaylist} />
+      <div className="App">
+        <SearchBar onSearch={search} />
+        <div className="App-playlist">
+          <SearchResults searchResults={searchResults} onAdd={addTrack} />
+          <Playlist 
+            playlistName={playlistName}
+            playlistTracks={playlistTracks}
+            onNameChange={updatePlaylistName}
+            onRemove={removeTrack}
+            onSave={savePlaylist} 
+          />
+        </div>
       </div>
     </div>
   );
