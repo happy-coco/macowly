@@ -12,7 +12,7 @@ React, git, API, javascript, css, jsx.
 
 ## Features
 
-Search songs, see information, create playlist, and export to Spotify
+Search songs, see information, create playlist, and export to Spotify.
 
 ### Search for songs by song title
 
