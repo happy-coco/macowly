@@ -1,7 +1,14 @@
-.Track {
+.track {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.track:hover {
+  background-color: #e0e0e0;
 }
 
 .Track-action {

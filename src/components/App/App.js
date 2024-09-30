@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import './App.module.css';
+import styles from './App.module.css';
 
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
@@ -34,7 +34,7 @@ function App() {
   const updatePlaylistName = useCallback((name) => {
     setPlaylistName(name);
   }, []);
-
+  // Saving the Playlist to a User's Account
   const savePlaylist = useCallback(() => {
     const trackUris = playlistTracks.map((track) => track.uri);
     Spotify.savePlaylist(playlistName, trackUris).then(() => {
@@ -46,10 +46,15 @@ function App() {
   return (
     <div>
       <h1>Macowwwly</h1>
-      <div className="App">
-        <SearchBar onSearch={search} />
-        <div className="App-playlist">
-          <SearchResults searchResults={searchResults} onAdd={addTrack} />
+      <div className={styles["app-container"]}>
+      {/*</div><div className="App">*/}
+        <div className={styles["search-container"]}> 
+          <SearchBar onSearch={search} />
+          <div className={styles["search-results"]}>
+            <SearchResults searchResults={searchResults} onAdd={addTrack} />
+          </div>
+        </div>
+        <div className={styles["playlist-container"]}>
           <Playlist 
             playlistName={playlistName}
             playlistTracks={playlistTracks}
@@ -64,4 +69,5 @@ function App() {
 }
 
 export default App;
+
 
