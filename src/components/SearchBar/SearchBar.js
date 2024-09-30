@@ -10,7 +10,7 @@ const SearchBar = (props) => {
 
   const search = useCallback(() => {
     props.onSearch(term);
-  }, [props]);
+  }, [props, term]);
 
   return (
     <div className="SearchBar">
