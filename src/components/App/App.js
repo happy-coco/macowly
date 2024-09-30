@@ -13,7 +13,7 @@ function App() {
 
   const search = useCallback((term) => {
     Spotify.search(term).then(setSearchResults);
-  }, [Spotify]);
+  }, []);
 
   const addTrack = useCallback(
     (track) => {
