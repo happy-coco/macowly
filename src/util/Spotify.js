@@ -1,5 +1,5 @@
 const clientId = '523fa4bcb8d54cad83116e800d8b43bc'; // Insert client ID here.
-const redirectUri = 'http://localhost:3000/'; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
+const redirectUri = 'https://macowly.netlify.app/'; // Replace this with your actual Netlify URL
 let accessToken;
 
 const Spotify = {
