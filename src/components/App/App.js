@@ -12,7 +12,14 @@ function App() {
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const search = useCallback((term) => {
+
+    // Debug log to check if search is triggered
+    console.log('Searching for:', term); 
+
     Spotify.search(term).then(setSearchResults);
+      // Debug log to check the results from API
+      //console.log('Search results:', results);
+      //setSearchResults(results); // Make sure searchResults is updated
   }, []);
 
   const addTrack = useCallback(
